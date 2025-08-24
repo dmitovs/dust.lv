@@ -14,7 +14,8 @@
             --card-bg-color: #242D23;
             --border-color: #404F3D;
             --text-color: #E5EADF; /* Soft, slightly green off-white */
-            --green-accent: #3fb950;
+            --green-accent: #3fb950; /* For 'Copied!' feedback */
+            --vote-btn-color: #4F5D4C; /* Subtle grey-green */
             --font-pixel: 'Press Start 2P', cursive;
             --font-sans: 'Roboto', sans-serif;
             
@@ -57,7 +58,7 @@
         .header h1 {
             font-family: var(--font-pixel);
             font-size: 3rem;
-            color: var(--text-color); /* Updated from pure white */
+            color: var(--text-color);
             text-shadow: 4px 4px 0px #000;
             margin-bottom: 0.5rem;
         }
@@ -86,6 +87,9 @@
             border: 2px solid var(--border-color);
             border-radius: 8px;
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
@@ -121,6 +125,13 @@
         .server-card.rusty .copy-btn { background-color: var(--rusty-color); color: #fff; }
 
         /* --- Buttons --- */
+        .card-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem; /* Distance between buttons */
+            flex-wrap: wrap; 
+        }
+
         .btn {
             display: inline-block;
             border-radius: 5px;
@@ -136,14 +147,19 @@
             transform: scale(1.05);
         }
 
-        .btn-large { /* For Copy IP Buttons */
-            padding: 0.7rem 2rem;
+        .btn-large { /* For Copy IP & Vote Buttons */
+            padding: 0.7rem 1.5rem;
             font-size: 1rem;
         }
 
         .btn-small { /* For Discord Button */
             padding: 0.5rem 1.5rem;
             font-size: 0.9rem;
+        }
+        
+        .btn.vote-btn {
+            background-color: var(--vote-btn-color);
+            color: var(--text-color);
         }
 
         .btn.discord-btn {
@@ -172,24 +188,34 @@
         <main class="server-list">
             <!-- Dusty Server Card -->
             <div class="server-card dusty">
-                <h2>Dusty</h2>
-                <p class="description">Minecraft Vanilla Anarchy server v1.12.2</p>
-                <div class="ip-address" id="dusty-ip">dusty.sparked.network</div>
-                <button class="btn btn-large copy-btn" onclick="copyToClipboard('dusty-ip', this)">Copy IP</button>
+                <div>
+                    <h2>Dusty</h2>
+                    <p class="description">Minecraft Vanilla Anarchy server v1.12.2</p>
+                    <div class="ip-address" id="dusty-ip">dusty.sparked.network</div>
+                </div>
+                <div class="card-buttons">
+                    <button class="btn btn-large copy-btn" onclick="copyToClipboard('dusty-ip', this)">Copy IP</button>
+                    <a href="https://minecraftservers.org/vote/675543" target="_blank" class="btn btn-large vote-btn">Vote</a>
+                </div>
             </div>
 
             <!-- Rusty Server Card -->
             <div class="server-card rusty">
-                <h2>Rusty</h2>
-                <p class="description">Minecraft Vanilla Anarchy server v1.2.5</p>
-                <div class="ip-address" id="rusty-ip">212.192.29.25:25447</div>
-                <button class="btn btn-large copy-btn" onclick="copyToClipboard('rusty-ip', this)">Copy IP</button>
+                <div>
+                    <h2>Rusty</h2>
+                    <p class="description">Minecraft Vanilla Anarchy server v1.2.5</p>
+                    <div class="ip-address" id="rusty-ip">212.192.29.25:25447</div>
+                </div>
+                <div class="card-buttons">
+                    <button class="btn btn-large copy-btn" onclick="copyToClipboard('rusty-ip', this)">Copy IP</button>
+                    <a href="https://minecraft-serverlist.com/server/3158" target="_blank" class="btn btn-large vote-btn">Vote</a>
+                </div>
             </div>
         </main>
 
         <!-- Discord Link -->
         <div class="discord-link">
-             <a href="https://discord.gg/hjSFvDzG" target="_blank" class="btn btn-small discord-btn">Join our Discord</a>
+             <a href="https://discord.gg/hjSFvDzG" target="_blank" class="btn btn-small discord-btn">Loot our Discord</a>
         </div>
         
         <!-- Footer -->
