@@ -1,31 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<link rel="canonical" href="https://dust.lv/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="Retro, Vintage, Classic Minecraft Vanilla Anarchy servers">
-	<meta property="og:title" content="Dusty and Rusty - Classic Minecraft Vanilla Anarchy servers">
-	<meta property="og:description" content="Experience classic, vintage, pure Minecraft 1.12 Vanilla Anarchy (Dusty) and Minecraft 1.0 Vanilla Anarchy (Rusty) servers. Rust with us.">
-	<meta property="og:image" content="https://dust.lv/og-image.jpg">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:title" content="Dust & Rust - Vintage Minecraft Vanilla Anarchy Servers">
-	<meta name="twitter:description" content="Dive into the classic, Vanilla Anarchy Minecraft v1.12 (Dusty) and 1.0 (Rusty) servers.">
-	<meta name="twitter:image" content="https://dust.lv/twitter-image.jpg">
-    <title>Dust & Rust - Minecraft Servers</title>
-	<script type="application/ld+json">
-	{
-	  "@context": "https://schema.org",
-	  "@type": "WebSite",
-	  "name": "Dust & Rust Servers",
-	  "url": "https://dust.lv/",
-	  "description": "Classic Minecraft Vanilla Anarchy servers.",
-	  "publisher": {
-		"@type": "Organization",
-		"name": "Dust.lv"
-	  }
-	}
-	</script>	
+
+    <!-- SEO Optimized Meta Tags -->
+    <title>Dust & Rust | Classic Minecraft Anarchy Servers (1.12 & 1.0)</title>
+    <meta name="description" content="Join Dust & Rust, the home for classic vanilla Minecraft anarchy. Survive on our vintage servers running old versions 1.12 and 1.0. No rules, no kits, pure survival.">
+
+    <!-- Schema Markup (Structured Data) for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "GameServer",
+      "name": "Dust & Rust - Classic Minecraft Anarchy",
+      "serverStatus": "Online",
+      "game": {
+        "@type": "VideoGame",
+        "name": "Minecraft",
+        "gamePlatform": "PC"
+      },
+      "serverList": [
+        {
+          "@type": "GameServer",
+          "name": "Dusty - Minecraft Vanilla Anarchy v1.12",
+          "game": {
+            "@type": "VideoGame",
+            "name": "Minecraft",
+            "softwareVersion": "1.12"
+          },
+          "serverAddress": "dusty.sparked.network"
+        },
+        {
+          "@type": "GameServer",
+          "name": "Rusty - Minecraft Vanilla Anarchy v1.0",
+          "game": {
+            "@type": "VideoGame",
+            "name": "Minecraft",
+            "softwareVersion": "1.0"
+          },
+          "serverAddress": "212.192.29.25:25447"
+        }
+      ]
+    }
+    </script>
+
     <style>
         /* --- Import Pixel Font --- */
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@400;700&display=swap');
@@ -38,7 +57,7 @@
             --text-color: #E5EADF; /* Soft, slightly green off-white */
             --green-accent: #3fb950; /* For 'Copied!' feedback */
             --vote-btn-color: #4F5D4C; /* Subtle grey-green */
-            --font-pixel: 'Press Start 2P', cursive;
+            --font-pixel: 'Press+Start+2P', cursive;
             --font-sans: 'Roboto', sans-serif;
             
             /* Server Specific Colors */
@@ -84,10 +103,22 @@
             text-shadow: 4px 4px 0px #000;
             margin-bottom: 0.5rem;
         }
-
-        .header p {
-            font-size: 1.1rem;
+        
+        /* --- SEO Content Section --- */
+        .about {
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+        }
+        .about h2 {
+            font-size: 1.3rem;
+            font-family: var(--font-pixel);
+            margin-bottom: 1rem;
             color: var(--text-color);
+            line-height: 1.4;
+        }
+        .about p {
+            color: #b8c7b4;
+            font-size: 1.1rem;
         }
 
         /* --- Server List --- */
@@ -120,6 +151,14 @@
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
+        
+        .server-card h2 small {
+            font-family: var(--font-sans);
+            font-size: 1rem;      /* Increased size */
+            font-weight: 700;     /* Made bold */
+            opacity: 0.95;        /* No longer transparent */
+            margin-left: 0.5rem;  /* Added spacing */
+        }
 
         .server-card .description {
             font-size: 1rem;
@@ -150,7 +189,7 @@
         .card-buttons {
             display: flex;
             justify-content: center;
-            gap: 1.25rem; /* Distance between buttons */
+            gap: 1.25rem;
             flex-wrap: wrap; 
         }
 
@@ -169,12 +208,12 @@
             transform: scale(1.05);
         }
 
-        .btn-large { /* For Copy IP & Vote Buttons */
+        .btn-large {
             padding: 0.7rem 1.5rem;
             font-size: 1rem;
         }
 
-        .btn-small { /* For Discord Button */
+        .btn-small {
             padding: 0.5rem 1.5rem;
             font-size: 0.9rem;
         }
@@ -185,7 +224,7 @@
         }
 
         .btn.discord-btn {
-            background-color: #454FBF; /* Darker Discord blurple */
+            background-color: #454FBF;
             color: #fff;
         }
 
@@ -203,16 +242,23 @@
         <!-- Header -->
         <header class="header">
             <h1>Dust & Rust</h1>
-            <p>Survive the Dust. Embrace the Rust.</p>
         </header>
+
+        <!-- SEO Content Section -->
+        <section class="about">
+            <h2>An Old-School Vanilla Anarchy Minecraft Experience</h2>
+            <p>
+                Rediscover the golden age of Minecraft on our vintage survival servers. Dust & Rust is dedicated to providing a classic, no-rules anarchy experience on old-school versions. Whether you prefer the popularity of 1.12 or the simplicity of 1.0, we offer a pure vanilla challenge with no mods, no OP items or kits, and no admin interruptions. Build, explore, and survive.
+            </p>
+        </section>
 
         <!-- Server Information -->
         <main class="server-list">
             <!-- Dusty Server Card -->
             <div class="server-card dusty">
                 <div>
-                    <h2>Dusty</h2>
-                    <p class="description">Minecraft Vanilla Anarchy server v1.12</p>
+                    <h2>Dusty <small>v1.12</small></h2>
+                    <p class="description">Vanilla Anarchy, No OP, no PvP</p>
                     <div class="ip-address" id="dusty-ip">dusty.sparked.network</div>
                 </div>
                 <div class="card-buttons">
@@ -224,8 +270,8 @@
             <!-- Rusty Server Card -->
             <div class="server-card rusty">
                 <div>
-                    <h2>Rusty</h2>
-                    <p class="description">Minecraft Vanilla Anarchy server v1.0</p>
+                    <h2>Rusty <small>v1.0</small></h2>
+                    <p class="description">Vanilla Anarchy, No OP, PvE and PvP</p>
                     <div class="ip-address" id="rusty-ip">212.192.29.25:25447</div>
                 </div>
                 <div class="card-buttons">
@@ -237,7 +283,7 @@
 
         <!-- Discord Link -->
         <div class="discord-link">
-             <a href="https://discord.gg/3PWKuTZg" target="_blank" class="btn btn-small discord-btn">Loot our Discord</a>
+             <a href="https://discord.gg/hjSFvDzG" target="_blank" class="btn btn-small discord-btn">Loot our Discord</a>
         </div>
         
         <!-- Footer -->
@@ -259,7 +305,7 @@
                 
                 setTimeout(() => {
                     buttonElement.innerText = originalText;
-                    buttonElement.style.backgroundColor = originalBgColor; // Revert to its specific color
+                    buttonElement.style.backgroundColor = originalBgColor;
                 }, 2000);
             }).catch(err => {
                 console.error('Failed to copy: ', err);
